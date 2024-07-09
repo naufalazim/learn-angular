@@ -1,3 +1,15 @@
-<p>list works!</p>
+<p>To-DO!</p>
 
-<p>{{ appointment }} </p>
+<input [(ngModel)]='newTodolistTitle' placeholder="Todo list desc">
+<input [(ngModel)]='newTodolistDate' type="date" placeholder="Todo Date">
+<button (click)='addTodo()' >Add</button>
+
+
+<!-- We need loop  -->
+<ul>
+    <li *ngFor="let appointment of appointments">
+        {{appointment.id}}
+        {{appointment.title}}
+        {{appointment.date | date:'dd.MM.yyyy'}}
+    </li>
+</ul>
