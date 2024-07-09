@@ -7,9 +7,10 @@
 
 <!-- We need loop  -->
 <ul>
-    <li *ngFor="let appointment of appointments">
+    <li *ngFor="let appointment of appointments; index as i">
         {{appointment.id}}
         {{appointment.title}}
         {{appointment.date | date:'dd.MM.yyyy'}}
+        <button (click)="deleteTodolist(i)">Delete</button>
     </li>
 </ul>

@@ -40,7 +40,11 @@ export class ListComponent {
       alert(this.appointments.length); //see how many elements
 
     }
+  }
 
+  //delete method:
+  deleteTodolist(index: number){
+    this.appointments.splice(index,1);
   }
 
 }
