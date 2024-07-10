@@ -1,12 +1,34 @@
-<p>To-DO!</p>
+<div class="container">
 
-<input [(ngModel)]='newTodolistTitle' placeholder="Todo list desc">
-<input [(ngModel)]='newTodolistDate' type="date" placeholder="Todo Date">
-<button (click)='addTodo()' >Add</button>
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col" >
+                <h2>Create new list</h2>
+            </div>
+        </div>
 
+        <div class="row mt-3">
+            <div class="col md-6">
+                <input class="form-control" [(ngModel)]='newTodolistTitle' placeholder="Todo list desc">
+            </div>
 
-<!-- We need loop  -->
-<ul>
+            <div class="col md-4">
+                <input class="form-control" [(ngModel)]='newTodolistDate' type="date" placeholder="Todo Date">
+            </div>
+
+            <div class="col md-2">
+                <button class="btn btn-primary w-100" (click)='addTodo()' >Add</button>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="text-center mt-5">
+        To Do List
+    </h2>
+
+    <!-- We need loop  -->
+<ul class="list-group mt-3">
     <li *ngFor="let appointment of appointments; index as i">
         {{appointment.id}}
         {{appointment.title}}
@@ -14,3 +36,6 @@
         <button (click)="deleteTodolist(i)">Delete</button>
     </li>
 </ul>
+
+
+</div>
